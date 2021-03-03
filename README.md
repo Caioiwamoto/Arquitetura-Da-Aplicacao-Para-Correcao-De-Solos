@@ -1,2 +1,2 @@
-# Arquitetura Da Aplicacao Para Correcao De Solos
+# Arquitetura Da Aplicação Para Correção De Solos
  Projeto demandado pelo IDR-Paraná, que visa desenvolver a Arquitetura da aplicação para correção de solos. O objetivo principal é identificar cada componente que precisa ser aplicado no solo de acordo com o seu estado atual. Este projeto é orientado pelo Professor Dr. Gabriel Costa Silva para a disciplina de Arquitetura de Software e será desenvolvido na linguagem de programação Java.
