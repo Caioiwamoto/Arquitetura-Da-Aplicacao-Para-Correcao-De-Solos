@@ -19,7 +19,29 @@ public class Aplicacao {
         this.texturadosolo = texturadosolo;
     }
     
-   
+    public void valoresideaisdosolo(){
+       Soloideal soloideal = new Soloideal();
+       
+       if(getTexturadosolo() == 1){
+           soloideal.setFosforo(9.0);
+           soloideal.setPotassio(0.35);
+           soloideal.setCalcio(6.0);
+           soloideal.setMagnesio(1.5);
+           soloideal.setEnxofre(9.0);
+           soloideal.setAluminio(0.0);
+       }
+        if(getTexturadosolo() == 2){
+           soloideal.setFosforo(12.0);
+           soloideal.setPotassio(0.25);
+           soloideal.setCalcio(4.0);
+           soloideal.setMagnesio(1.0);
+           soloideal.setEnxofre(6.0);
+           soloideal.setAluminio(0.0);
+       }
+        else{
+            System.out.println("valor da textura do solo incorreto");
+        }
+   }
 }
     
   
