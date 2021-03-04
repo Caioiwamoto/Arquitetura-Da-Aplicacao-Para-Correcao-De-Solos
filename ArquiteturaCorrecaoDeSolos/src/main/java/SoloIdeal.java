@@ -14,6 +14,15 @@ public class  Soloideal {
     private double magnesio;
     private double fosforo;
     private double enxofre;
+    private double aluminio;
+
+    public double getAluminio() {
+        return aluminio;
+    }
+
+    public void setAluminio(double aluminio) {
+        this.aluminio = aluminio;
+    }
 
     public double getPotassio() {
         return potassio;
