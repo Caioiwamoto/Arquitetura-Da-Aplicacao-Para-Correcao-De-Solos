@@ -8,21 +8,12 @@
  *
  * @author leona
  */
-public class Class_ideal {
-    private int texturadosolo;
+public class  Soloideal {
     private double potassio;
     private double calcio;
     private double magnesio;
     private double fosforo;
     private double enxofre;
-
-    public int getTexturadosolo() {
-        return texturadosolo;
-    }
-
-    public void setTexturadosolo(int texturadosolo) {
-        this.texturadosolo = texturadosolo;
-    }
 
     public double getPotassio() {
         return potassio;
@@ -63,6 +54,5 @@ public class Class_ideal {
     public void setEnxofre(double enxofre) {
         this.enxofre = enxofre;
     }
-    
     
 }
