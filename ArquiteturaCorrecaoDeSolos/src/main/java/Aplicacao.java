@@ -19,7 +19,7 @@ public class Aplicacao {
         this.texturadosolo = texturadosolo;
     }
     
-    public void valoresideaisdosolo(){
+    public Soloideal valoresideaisdosolo( ){
        Soloideal soloideal = new Soloideal();
        
        if(getTexturadosolo() == 1){
@@ -29,8 +29,9 @@ public class Aplicacao {
            soloideal.setMagnesio(1.5);
            soloideal.setEnxofre(9.0);
            soloideal.setAluminio(0.0);
+           
        }
-        if(getTexturadosolo() == 2){
+       else if(getTexturadosolo() == 2){
            soloideal.setFosforo(12.0);
            soloideal.setPotassio(0.25);
            soloideal.setCalcio(4.0);
@@ -41,6 +42,18 @@ public class Aplicacao {
         else{
             System.out.println("valor da textura do solo incorreto");
         }
+       return soloideal;
+   }
+   public static void main (String[] args){
+       
+       Aplicacao ap = new Aplicacao();
+       ap.setTexturadosolo(2);
+       System.out.println(ap.valoresideaisdosolo());
+       
+       
+       
+       System.out.println(ap.getTexturadosolo());
+       System.out.println(ap.valoresideaisdosolo().getCalcio());
    }
 }
     
