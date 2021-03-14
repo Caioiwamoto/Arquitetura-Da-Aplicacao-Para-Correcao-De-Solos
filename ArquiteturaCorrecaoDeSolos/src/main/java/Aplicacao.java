@@ -21,23 +21,23 @@ public class Aplicacao {
     
     public Soloideal valoresideaisdosolo( ){
        Soloideal soloideal = new Soloideal();
-       
+
        if(getTexturadosolo() == 1){
-           soloideal.setFosforo(9.0);
-           soloideal.setPotassio(0.35);
-           soloideal.setCalcio(6.0);
-           soloideal.setMagnesio(1.5);
-           soloideal.setEnxofre(9.0);
-           soloideal.setAluminio(0.0);
+           soloideal.fosforo = 9.0;
+           soloideal.potassio = 0.35;
+           soloideal.calcio = 6.0;
+           soloideal.magnesio = 1.5;
+           soloideal.enxofre = 9.0;
+           soloideal.aluminio = 0.0;
            
        }
        else if(getTexturadosolo() == 2){
-           soloideal.setFosforo(12.0);
-           soloideal.setPotassio(0.25);
-           soloideal.setCalcio(4.0);
-           soloideal.setMagnesio(1.0);
-           soloideal.setEnxofre(6.0);
-           soloideal.setAluminio(0.0);
+           soloideal.fosforo = 12.0;
+           soloideal.potassio = 0.25;
+           soloideal.calcio = 4.0;
+           soloideal.magnesio = 1.0;
+           soloideal.enxofre = 6.0;
+           soloideal.aluminio = 0.0;
        }
         else{
             System.out.println("valor da textura do solo incorreto");
@@ -47,13 +47,10 @@ public class Aplicacao {
    public static void main (String[] args){
        
        Aplicacao ap = new Aplicacao();
-       ap.setTexturadosolo(2);
-       System.out.println(ap.valoresideaisdosolo());
-       
-       
+       ap.setTexturadosolo(1);
        
        System.out.println(ap.getTexturadosolo());
-       System.out.println(ap.valoresideaisdosolo().getCalcio());
+       System.out.println(ap.valoresideaisdosolo().calcio);
    }
 }
     
