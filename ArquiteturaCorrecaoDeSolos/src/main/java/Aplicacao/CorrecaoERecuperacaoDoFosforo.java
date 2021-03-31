@@ -157,15 +157,18 @@ public class CorrecaoERecuperacaoDoFosforo {
                             this.eficienciaDoFosforo,
                             this.fonteDeFosforoUtilizar)*0.11;
                 }
-                else{
-                    return 0.0;
-                }
-                
             }
         }
         return 0.0;
     }
-    double calculoDoCustoDoSuperfostatoSimplesPorHectare(){
+    double calculoDoCustoDoFosforoPorHectare(){
+        if(this.fonteDeFosforoUtilizar >= 1 && this.fonteDeFosforoUtilizar <= 12){
+            return calculoDaQuantidadeFosforoAplicar(
+                            this.teorDeFosforoAtingir,
+                            this.quantFosforoNoSolo,
+                            this.eficienciaDoFosforo,
+                            this.fonteDeFosforoUtilizar)/1000;
+        }
         return 0.0;
     }
 }

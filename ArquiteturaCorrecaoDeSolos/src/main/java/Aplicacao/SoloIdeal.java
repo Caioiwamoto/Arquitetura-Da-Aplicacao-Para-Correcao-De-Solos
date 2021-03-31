@@ -13,8 +13,8 @@ public class SoloIdeal {
         private double enxofre;
         private double aluminio;
         
-        public SoloIdeal(int testuraDoSolo){
-            switch (testuraDoSolo) {
+        public SoloIdeal(int texturaDoSolo){
+            switch (texturaDoSolo) {
                 case 1:
                     fosforo = 9.0;
                     potassio = 0.35;
