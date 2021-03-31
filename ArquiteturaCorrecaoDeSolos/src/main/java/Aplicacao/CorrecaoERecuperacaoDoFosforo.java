@@ -126,7 +126,43 @@ public class CorrecaoERecuperacaoDoFosforo {
         }
         return 0.0;
     }
-    double caluloDoSuperfostatoSimplesKiloPorHectare(){
+    double calculoDoEnxofreKiloPorHectare(int fonteDeFosforoUtilizar ){
+        if(calculoDaQuantidadeFosforoAplicar(
+                this.teorDeFosforoAtingir,
+                this.quantFosforoNoSolo,
+                this.eficienciaDoFosforo,
+                this.fonteDeFosforoUtilizar) == 0){
+                    return 0.0;
+        }
+        else{
+            if(fonteDeFosforoUtilizar == 5){
+                return calculoDaQuantidadeFosforoAplicar(
+                        this.teorDeFosforoAtingir,
+                        this.quantFosforoNoSolo,
+                        this.eficienciaDoFosforo,
+                        this.fonteDeFosforoUtilizar)*0.15;
+            }
+            else{
+                if(fonteDeFosforoUtilizar == 1){
+                    return calculoDaQuantidadeFosforoAplicar(
+                            this.teorDeFosforoAtingir,
+                            this.quantFosforoNoSolo,
+                            this.eficienciaDoFosforo,
+                            this.fonteDeFosforoUtilizar)*0.1;
+                }
+                if(fonteDeFosforoUtilizar == 12){
+                    return calculoDaQuantidadeFosforoAplicar(
+                            this.teorDeFosforoAtingir,
+                            this.quantFosforoNoSolo,
+                            this.eficienciaDoFosforo,
+                            this.fonteDeFosforoUtilizar)*0.11;
+                }
+                else{
+                    return 0.0;
+                }
+                
+            }
+        }
         return 0.0;
     }
     double calculoDoCustoDoSuperfostatoSimplesPorHectare(){
