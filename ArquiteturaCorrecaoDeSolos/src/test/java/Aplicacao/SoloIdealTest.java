@@ -8,7 +8,6 @@ public class SoloIdealTest {
     
     @Test
     public void test(){
-     
         assertEquals(0.0, new SoloIdeal(1).getAluminio(), 0.0);
         assertEquals(9.0, new SoloIdeal(1).getFosforo(), 0.0);
         assertEquals(0.35, new SoloIdeal(1).getPotassio(), 0.0);
