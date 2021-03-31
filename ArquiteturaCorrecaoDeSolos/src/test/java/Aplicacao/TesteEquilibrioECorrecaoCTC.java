@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Aplicacao;
-import org.junit.jupiter.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
