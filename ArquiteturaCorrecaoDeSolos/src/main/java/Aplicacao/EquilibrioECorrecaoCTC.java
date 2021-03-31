@@ -12,7 +12,7 @@ public class  EquilibrioECorrecaoCTC {
     }
     
     double calculoVPercentual(double Scmol, double CTCcmol) {
-        if (Scmol > 0 && CTCcmol > 0) {
+        if (Scmol > 0 || CTCcmol > 0) {
             return Scmol / CTCcmol * 100;
         } 
         return 0.0;
