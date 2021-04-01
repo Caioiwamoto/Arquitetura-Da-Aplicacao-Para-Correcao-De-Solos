@@ -23,18 +23,19 @@ public class CorrecaoERecuperacaoDoPotassio {
            this.participacaoPercentualDesejadaDoPotassioNaCTC = participacaoPercentualDesejadaDoPotassioNaCTC;
     }
     
-    double somaDeTodosNutrientesDoSolo(){
-        return this.quantDePotassioNoSolo + 
-               this.quantDeMagnseioNoSolo + 
-               this.quantDeCalcioNoSolo +
-               this.quantDeAluminioHidrogenioNoSolo;
-    }
+    EquilibrioECorrecaoCTC ECCTC = new EquilibrioECorrecaoCTC();
     
     double participacaoPercentualAtualDoPotassioNaCTCSolo(){
-        if(this.quantDePotassioNoSolo == 0 || somaDeTodosNutrientesDoSolo() == 0){
+        if(this.quantDePotassioNoSolo == 0 || ECCTC.calculoCTCCmol(this.quantDePotassioNoSolo, 
+                                                                   this.quantDeCalcioNoSolo, 
+                                                                   this.quantDeMagnseioNoSolo, 
+                                                                   this.quantDeAluminioHidrogenioNoSolo) == 0){
             return 0.0;
         }else{
-            return quantDePotassioNoSolo / somaDeTodosNutrientesDoSolo()*100;
+            return this.quantDePotassioNoSolo / ECCTC.calculoCTCCmol(this.quantDePotassioNoSolo, 
+                                                                this.quantDeCalcioNoSolo, 
+                                                                this.quantDeMagnseioNoSolo, 
+                                                                this.quantDeAluminioHidrogenioNoSolo)*100;
         }
     }
     
@@ -57,9 +58,10 @@ public class CorrecaoERecuperacaoDoPotassio {
             return 0.0;
         }
         else{
-            return (this.quantDePotassioNoSolo * this.participacaoPercentualDesejadaDoPotassioNaCTC) / 
-                    (participacaoPercentualAtualDoPotassioNaCTCSolo() - this.quantDePotassioNoSolo);
+            return this.quantDePotassioNoSolo * this.participacaoPercentualDesejadaDoPotassioNaCTC / 
+                    participacaoPercentualAtualDoPotassioNaCTCSolo() - this.quantDePotassioNoSolo;
         }
+
     }
     
     double quantidadeDePotassioAplicar(int fonteDePotassioUsar){
@@ -69,13 +71,13 @@ public class CorrecaoERecuperacaoDoPotassio {
         else{
             switch (fonteDePotassioUsar){
                 case 1:
-                    return ((calculoDaNescessidadeDePotassioAdiconar()* 39.1 * 10 * 2 * 1.2 * 100)/ (85/100)) * 100/58;
+                    return (calculoDaNescessidadeDePotassioAdiconar()* 39.1 * 10 * 2 * 1.2 * 100/85 * 100/58.0);
                 case 2:
-                    return ((calculoDaNescessidadeDePotassioAdiconar()* 39.1 * 10 * 2 * 1.2 * 100)/ (85/100)) * 100/52;
+                    return (calculoDaNescessidadeDePotassioAdiconar()* 39.1* 10 * 2 * 1.2 * 100/85 * 100/52.0);
                 case 3:
-                    return ((calculoDaNescessidadeDePotassioAdiconar()* 39.1 * 10 * 2 * 1.2 * 100)/ (85/100)) * 100/22;
+                    return (calculoDaNescessidadeDePotassioAdiconar()* 39.1 * 10 * 2 * 1.2 * 100/85 * 100/22.0);
                 case 4:
-                    return ((calculoDaNescessidadeDePotassioAdiconar()* 39.1 * 10 * 2 * 1.2 * 100)/ (85/100)) * 100/44;
+                    return (calculoDaNescessidadeDePotassioAdiconar()* 39.1 * 10 * 2 * 1.2 * 100/85 * 100/44.0);
             }       
         }
         return 0.0;
