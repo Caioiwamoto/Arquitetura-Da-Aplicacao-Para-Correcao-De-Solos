@@ -30,11 +30,29 @@ public class CorrecaoERecuperacaoDoPotassioTest {
         }
         
         @Test
-        public void testQuantidadeDePotassioAplicar(){
-            assertEquals(450.5462068965517, CRPostassio.quantidadeDePotassioAplicar(1), 0.0);
-            assertEquals(502.5323076923077, CRPostassio.quantidadeDePotassioAplicar(2), 0.0);
-            assertEquals(1187.8036363636363, CRPostassio.quantidadeDePotassioAplicar(3), 0.0);
-            assertEquals(593.9018181818182, CRPostassio.quantidadeDePotassioAplicar(4), 0.0);
+        public void testQuantidadeDaFonteAplicar(){
+            assertEquals(450.5462068965517, CRPostassio.calculoDaQuantidadeDaFonteAplicar(1), 0.0);
+            assertEquals(502.5323076923077, CRPostassio.calculoDaQuantidadeDaFonteAplicar(2), 0.0);
+            assertEquals(1187.8036363636363, CRPostassio.calculoDaQuantidadeDaFonteAplicar(3), 0.0);
+            assertEquals(593.9018181818182, CRPostassio.calculoDaQuantidadeDaFonteAplicar(4), 0.0);
         }
-        
+       
+        @Test
+        public void testCalculoDoCustoDaFonteUtilizarPorHectare(){
+            
+            assertEquals(1126.3655172413794, CRPostassio.calculoDoCustoDaFonteUtilizarPorHectare(1, 2500.00, 
+                                                        CRPostassio.calculoDaQuantidadeDaFonteAplicar(1), 1), 0.0);
+                      
+            assertEquals(1256.3307692307694, CRPostassio.calculoDoCustoDaFonteUtilizarPorHectare(2, 2500.00, 
+                                                        CRPostassio.calculoDaQuantidadeDaFonteAplicar(2), 1), 0.0);
+            
+            assertEquals(2969.509090909091, CRPostassio.calculoDoCustoDaFonteUtilizarPorHectare(3, 2500.00, 
+                                                        CRPostassio.calculoDaQuantidadeDaFonteAplicar(3), 1), 0.0);
+            
+            assertEquals(0.4157312727272727, CRPostassio.calculoDoCustoDaFonteUtilizarPorHectare(4, 2500.00, 
+                                                        CRPostassio.calculoDaQuantidadeDaFonteAplicar(4), 1), 0.0);
+            
+            assertEquals(0.3, CRPostassio.calculoDoCustoDaFonteUtilizarPorHectare(4, 2500.00, 
+                                                        CRPostassio.calculoDaQuantidadeDaFonteAplicar(4), 2), 0.0);
+        }
 }

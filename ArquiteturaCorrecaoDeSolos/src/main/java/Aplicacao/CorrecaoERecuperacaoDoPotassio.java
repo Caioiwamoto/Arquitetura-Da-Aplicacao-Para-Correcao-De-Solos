@@ -64,7 +64,7 @@ public class CorrecaoERecuperacaoDoPotassio {
 
     }
     
-    double quantidadeDePotassioAplicar(int fonteDePotassioUsar){
+    double calculoDaQuantidadeDaFonteAplicar(int fonteDePotassioUsar){
         if (calculoDaNescessidadeDePotassioAdiconar() < 0.001){
             return 0.0;
         }
@@ -81,5 +81,27 @@ public class CorrecaoERecuperacaoDoPotassio {
             }       
         }
         return 0.0;
+    }
+    
+    double calculoDoCustoDaFonteUtilizarPorHectare(
+            int fonteDePotassioUsar, 
+            double valorPorTonelada,
+            double calculoDaQuantidadeDaFonteAplicar,
+            int texturaSolo){
+        if(fonteDePotassioUsar >= 1 && fonteDePotassioUsar <= 3){
+            return (calculoDaQuantidadeDaFonteAplicar/1000) * valorPorTonelada;
+        }
+        if(fonteDePotassioUsar == 4){
+            switch (texturaSolo) {
+                case 1:
+                    return 0.7*calculoDaQuantidadeDaFonteAplicar/1000;
+                case 2:
+                    return 0.6*calculoDaQuantidadeDaFonteAplicar/1000;
+                default:
+                    return 0.0;
+            }
+        }
+        return 0.0;
+
     }
 }
