@@ -52,7 +52,7 @@ public class CorrecaoERecuperacaoDoPotassioTest {
             assertEquals(0.4157312727272727, CRPostassio.calculoDoCustoDaFonteUtilizarPorHectare(4, 2500.00, 
                                                         CRPostassio.calculoDaQuantidadeDaFonteAplicar(4), 1), 0.0);
             
-            assertEquals(0.3563410909090909, CRPostassio.calculoDoCustoDaFonteUtilizarPorHectare(4, 2500.00, 
+            assertEquals(0.2969509090909091, CRPostassio.calculoDoCustoDaFonteUtilizarPorHectare(4, 2500.00, 
                                                         CRPostassio.calculoDaQuantidadeDaFonteAplicar(4), 2), 0.0);
         }
 }

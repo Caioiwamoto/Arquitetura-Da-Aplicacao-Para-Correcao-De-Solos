@@ -96,7 +96,7 @@ public class CorrecaoERecuperacaoDoPotassio {
                 case 1:
                     return 0.7*calculoDaQuantidadeDaFonteAplicar/1000;
                 case 2:
-                    return 0.6*calculoDaQuantidadeDaFonteAplicar/1000;
+                    return 0.5*calculoDaQuantidadeDaFonteAplicar/1000;
                 default:
                     return 0.0;
             }
