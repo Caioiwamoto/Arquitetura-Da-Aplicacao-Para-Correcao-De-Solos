@@ -8,7 +8,7 @@ public class CorrecaoERecuperacaoDoFosforo {
     private double eficienciaDoFosforo;
     private int fonteDeFosforoUtilizar;
     
-    double calculoDaQuantidadeFosforoAplicar(
+    double calculoDaQuantidadeDaFonteAplicar(
         double teorDeFosforoAtingir, 
         double quantFosforoNoSolo,
         double eficienciaDoFosforo,
