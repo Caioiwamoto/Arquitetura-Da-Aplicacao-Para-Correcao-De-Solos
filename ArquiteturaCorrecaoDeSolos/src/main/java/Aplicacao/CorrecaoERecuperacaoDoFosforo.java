@@ -21,10 +21,7 @@ public class CorrecaoERecuperacaoDoFosforo {
       
             double quantFosforoFaltante = teorDeFosforoAtingir - quantFosforoNoSolo;
             
-            if(quantFosforoFaltante < 0.01){
-                return 0.0;
-            }
-            else{
+            if(quantFosforoFaltante > 0.01 && eficienciaDoFosforo > 0){
                 switch(fonteDeFosforoUtilizar){
                     case 1:
                         return ((quantFosforoFaltante*4.58*100)/ (eficienciaDoFosforo/100))/18;
@@ -56,11 +53,8 @@ public class CorrecaoERecuperacaoDoFosforo {
     }
     
     double calculoDoCalcioKiloPorHectare(int fonteDeFosforoUtilizar, double calculoDaQuantidadeDaFonteAplicar){
-        if(calculoDaQuantidadeDaFonteAplicar == 0){
-            return 0.0;
-        }
-        else{
-            switch(fonteDeFosforoUtilizar){
+        if(calculoDaQuantidadeDaFonteAplicar > 0){
+             switch(fonteDeFosforoUtilizar){
                 case 1:
                     return calculoDaQuantidadeDaFonteAplicar*0.28;
                 case 2:
@@ -85,30 +79,25 @@ public class CorrecaoERecuperacaoDoFosforo {
                     return 0.0;
                 case 12:
                     return calculoDaQuantidadeDaFonteAplicar*0.18;
-                default:
-                    return 0.0;
-            }
-        }
-    }
-    double calculoDoEnxofreKiloPorHectare(int fonteDeFosforoUtilizar, double calculoDaQuantidadeDaFonteAplicar ){
-        if(calculoDaQuantidadeDaFonteAplicar == 0){
-                    return 0.0;
-        }
-        else{
-            if(fonteDeFosforoUtilizar == 5){
-                return calculoDaQuantidadeDaFonteAplicar*0.15;
-            }
-            else{
-                if(fonteDeFosforoUtilizar == 1){
-                    return calculoDaQuantidadeDaFonteAplicar*0.1;
-                }
-                if(fonteDeFosforoUtilizar == 12){
-                    return calculoDaQuantidadeDaFonteAplicar*0.11;
-                }
             }
         }
         return 0.0;
     }
+    
+    double calculoDoEnxofreKiloPorHectare(int fonteDeFosforoUtilizar, double calculoDaQuantidadeDaFonteAplicar ){
+        if(calculoDaQuantidadeDaFonteAplicar > 0){
+            switch(fonteDeFosforoUtilizar){
+                case 1:
+                    return calculoDaQuantidadeDaFonteAplicar*0.1;
+                case 5:
+                    return calculoDaQuantidadeDaFonteAplicar*0.15;
+                case 12:
+                    return calculoDaQuantidadeDaFonteAplicar*0.11;
+            }       
+        }
+        return 0.0;
+    }
+    
     double calculoDoCustoDaFonteUtilizarPorHectare(double calculoDaQuantidadeDaFonteAplicar, double valorPorTonelada){
         if(this.fonteDeFosforoUtilizar >= 1 && this.fonteDeFosforoUtilizar <= 12){
             return (calculoDaQuantidadeDaFonteAplicar/1000) * valorPorTonelada;
