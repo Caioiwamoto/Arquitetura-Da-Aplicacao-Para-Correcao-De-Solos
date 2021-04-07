@@ -26,7 +26,7 @@ public class  EquilibrioECorrecaoCTC {
     }
     
     double calculoVPercentual() {
-        if (calculoSCmol() > 0 || calculoCTCCmol() > 0) {
+        if (calculoSCmol() > 0 && calculoCTCCmol() > 0) {
             return calculoSCmol() / calculoCTCCmol() * 100;
         } 
         return 0.0;
