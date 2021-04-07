@@ -3,31 +3,45 @@ package Aplicacao;
 
 public class  EquilibrioECorrecaoCTC {
     
-    double calculoSCmol(double potassio, double calcio, double magnesio) {
-        return potassio + calcio + magnesio;
-    }
-
-    double calculoCTCCmol(double potassio,double calcio,double magnesio, double HAl) {
-        return potassio + calcio + magnesio + HAl;
+    private double potassio;
+    private double calcio;
+    private double magnesio;
+    private double hidrogenioAluminio;
+    private double MO;
+    
+    public EquilibrioECorrecaoCTC (double potassio, double calcio, double magnesio, double hidrogenioAluminio, double MO){
+        this.potassio = potassio;
+        this.calcio = calcio;
+        this.magnesio = magnesio;
+        this.hidrogenioAluminio = hidrogenioAluminio;
+        this.MO = MO;
     }
     
-    double calculoVPercentual(double Scmol, double CTCcmol) {
-        if (Scmol > 0 || CTCcmol > 0) {
-            return Scmol / CTCcmol * 100;
+    double calculoSCmol() {
+        return this.potassio + this.calcio + this.magnesio;
+    }
+
+    double calculoCTCCmol() {
+        return this.potassio + this.calcio + this.magnesio + this.hidrogenioAluminio;
+    }
+    
+    double calculoVPercentual() {
+        if (calculoSCmol() > 0 || calculoCTCCmol() > 0) {
+            return calculoSCmol() / calculoCTCCmol() * 100;
         } 
         return 0.0;
     }
 
-    double calculoMOPercentual(double MO) {
-        if (MO > 0) {
-            return MO / 10;
+    double calculoMOPercentual() {
+        if (this.MO > 0) {
+            return this.MO / 10;
         }
         return 0.0;
     }
 
-    double calculoDoCarbono(double MOPercentual) {
-        if (MOPercentual > 0) {
-            return MOPercentual / 1.72 * 10;
+    double calculoDoCarbono() {
+        if (calculoMOPercentual() > 0) {
+            return calculoMOPercentual() / 1.72 * 10;
         }
         return 0.0;
     }
