@@ -22,5 +22,12 @@ public class SoloIdealTest {
         assertEquals(1.0, new SoloIdeal(2).getMagnesio(), 0.0);
         assertEquals(6.0, new SoloIdeal(2).getEnxofre(), 0.0);
         assertEquals(0.0, new SoloIdeal(2).getAluminio(), 0.0);
+        
+        assertEquals(0.0, new SoloIdeal(3).getFosforo(), 0.0);
+        assertEquals(0.0, new SoloIdeal(4).getPotassio(), 0.0);
+        assertEquals(0.0, new SoloIdeal(5).getCalcio(), 0.0);
+        assertEquals(0.0, new SoloIdeal(3).getMagnesio(), 0.0);
+        assertEquals(0.0, new SoloIdeal(4).getEnxofre(), 0.0);
+        assertEquals(0.0, new SoloIdeal(5).getAluminio(), 0.0);
     }
 }

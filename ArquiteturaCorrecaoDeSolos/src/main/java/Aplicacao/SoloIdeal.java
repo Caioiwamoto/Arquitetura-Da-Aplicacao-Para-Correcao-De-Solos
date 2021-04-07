@@ -16,49 +16,53 @@ public class SoloIdeal {
         public SoloIdeal(int texturaDoSolo){
             switch (texturaDoSolo) {
                 case 1:
-                    fosforo = 9.0;
-                    potassio = 0.35;
-                    calcio = 6.0;
-                    magnesio = 1.5;
-                    enxofre = 9.0;
-                    aluminio = 0.0;
+                    this.fosforo = 9.0;
+                    this.potassio = 0.35;
+                    this.calcio = 6.0;
+                    this.magnesio = 1.5;
+                    this.enxofre = 9.0;
+                    this.aluminio = 0.0;
                     break;
                 case 2:
-                    fosforo = 12.0;
-                    potassio = 0.25;
-                    calcio = 4.0;
-                    magnesio = 1.0;
-                    enxofre = 6.0;
-                    aluminio = 0.0;
-                break;
+                    this.fosforo = 12.0;
+                    this.potassio = 0.25;
+                    this.calcio = 4.0;
+                    this.magnesio = 1.0;
+                    this.enxofre = 6.0;
+                    this.aluminio = 0.0;
+                    break;
                 default:
-                    System.out.println("valor da textura do solo incorreto");
+                    this.fosforo = 0.0;
+                    this.potassio = 0.0;
+                    this.calcio = 0.0;
+                    this.magnesio = 0.0;
+                    this.enxofre = 0.0;
+                    this.aluminio = 0.0;
                     break;
             }
         }
 
-    public double getPotassio() {
-        return potassio;
-    }
+        public double getPotassio() {
+            return potassio;
+        }
 
-    public double getCalcio() {
-        return calcio;
-    }
+        public double getCalcio() {
+            return calcio;
+        }
 
-    public double getMagnesio() {
-        return magnesio;
-    }
+        public double getMagnesio() {
+            return magnesio;
+        }
 
-    public double getFosforo() {
-        return fosforo;
-    }
+        public double getFosforo() {
+            return fosforo;
+        }
 
-    public double getEnxofre() {
-        return enxofre;
-    }
+        public double getEnxofre() {
+            return enxofre;
+        }
 
-    public double getAluminio() {
-        return aluminio;
-    }
-        
+        public double getAluminio() {
+            return aluminio;
+        }    
 }
