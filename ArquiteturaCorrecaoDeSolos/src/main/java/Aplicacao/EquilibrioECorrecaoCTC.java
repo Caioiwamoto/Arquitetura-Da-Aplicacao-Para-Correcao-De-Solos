@@ -1,13 +1,11 @@
 package Aplicacao;
 
-
 public class  EquilibrioECorrecaoCTC {
-    
-    private double potassio;
-    private double calcio;
-    private double magnesio;
-    private double hidrogenioAluminio;
-    private double MO;
+    private final double potassio;
+    private final double calcio;
+    private final double magnesio;
+    private final double hidrogenioAluminio;
+    private final double MO;
     
     public EquilibrioECorrecaoCTC (double potassio, double calcio, double magnesio, double hidrogenioAluminio, double MO){
         this.potassio = potassio;

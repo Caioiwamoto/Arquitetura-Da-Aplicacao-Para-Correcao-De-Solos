@@ -1,9 +1,7 @@
 
 package Aplicacao;
-
 import org.junit.Test;
 import static org.junit.Assert.*;
-
 
 public class EquilibrioECorrecaoCTCTest {
     
@@ -33,7 +31,5 @@ public class EquilibrioECorrecaoCTCTest {
     public void testCalculoCarbono(){
         assertEquals(17.848837209302324, EqCrCTC.calculoDoCarbono(), 0.0);
     }
-    
-    
-    
+
 }
