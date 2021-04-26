@@ -29,41 +29,24 @@ public class CorrecaoERecuperacaoDoFosforo {
         return 0.0;
     }
     
-    double calculoDoCalcioKiloPorHectare(TiposDeFontesDeFosforo fonteDeFosforoUtilizar, double calculoDaQuantidadeDaFonteAplicar){
-        if(calculoDaQuantidadeDaFonteAplicar > 0){
-            switch(fonteDeFosforoUtilizar){
-                case SUPERFOSFATO_SIMPLES, 
-                     YOORIN, 
-                     FOSFATO_PATOS_MINAS-> {return calculoDaQuantidadeDaFonteAplicar*0.28;}
-                case SUPERFOSFATO_TRIPLO -> {return calculoDaQuantidadeDaFonteAplicar*0.2;}
-                case MAP -> {return calculoDaQuantidadeDaFonteAplicar*0.09;}
-                case DAP -> {return calculoDaQuantidadeDaFonteAplicar*0.16;}
-                case FOSFATO_ARAD,
-                     FOSFATO_GAFSA -> {return calculoDaQuantidadeDaFonteAplicar*0.52;}
-                case FOSFATO_DAOUI-> {return calculoDaQuantidadeDaFonteAplicar*0.45;}
-                case ESCORIA_DE_THOMAS-> {return calculoDaQuantidadeDaFonteAplicar*0.44;}
-                case ACIDO_FOSFORICO -> {return 0.0;}
-                case MULTIF_MAGNESIANO-> {return calculoDaQuantidadeDaFonteAplicar*0.18;}
-            }
-        }
-        return 0.0;
+    double[] calculaValoresDosNutrientesAdicionais(TiposDeFontesDeFosforo fonteDeFosforoUtilizar, double calculoDaQuantidadeDaFonteAplicar){
+        double valoresNutrientes[] = fonteDeFosforoUtilizar.valoresNutrientesAdicionais();
+        if(calculoDaQuantidadeDaFonteAplicar > 0 ){
+            valoresNutrientes[0] = valoresNutrientes[0]*calculoDaQuantidadeDaFonteAplicar;
+            valoresNutrientes[1] = valoresNutrientes[1]*calculoDaQuantidadeDaFonteAplicar;
+            return valoresNutrientes;
+               
+        } 
+        return valoresNutrientes;
     }
     
-    double calculoDoEnxofreKiloPorHectare(TiposDeFontesDeFosforo fonteDeFosforoUtilizar, double calculoDaQuantidadeDaFonteAplicar ){
-        if(calculoDaQuantidadeDaFonteAplicar > 0){
-            switch(fonteDeFosforoUtilizar){
-                case SUPERFOSFATO_SIMPLES -> {return calculoDaQuantidadeDaFonteAplicar*0.1;}
-                case YOORIN-> {return calculoDaQuantidadeDaFonteAplicar*0.15;}
-                case MULTIF_MAGNESIANO-> {return calculoDaQuantidadeDaFonteAplicar*0.11;}
-            }       
-        }
-        return 0.0;
+    String[] nutrientesAdicionais(TiposDeFontesDeFosforo fonteDeFosforoUtilizar){
+        return fonteDeFosforoUtilizar.nutrientesAdicionais();
     }
-    
-    double calculoDoCustoDaFonteUtilizarPorHectare(int fonteDeFosforoUtilizar, double calculoDaQuantidadeDaFonteAplicar, double valorPorTonelada){
-        if(fonteDeFosforoUtilizar >= 1 && fonteDeFosforoUtilizar <= 12){
+
+    double calculoDoCustoDaFonteUtilizarPorHectare(String fonteDeFosforoUtilizar, double calculoDaQuantidadeDaFonteAplicar, double valorPorTonelada){
+        if(TiposDeFontesDeFosforo.verificaFonte(fonteDeFosforoUtilizar) != false)
             return (calculoDaQuantidadeDaFonteAplicar/1000) * valorPorTonelada;
-        }
         return 0.0;
     }
 }
