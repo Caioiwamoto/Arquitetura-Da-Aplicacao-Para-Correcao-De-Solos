@@ -9,34 +9,40 @@ public class CorrecaoERecuperacaoDoFosforo {
 
         if (quantFosforoFaltante > 0.01 && eficienciaDoFosforo > 0) {
             switch (fonteDeFosforoUtilizar) {
-                case SUPERFOSFATO_SIMPLES, YOORIN, MULTIF_MAGNESIANO -> {
+                case SUPERFOSFATO_SIMPLES : {
                     return ((quantFosforoFaltante * 4.58 * 100) / (eficienciaDoFosforo / 100)) / 18;
                 }
-                case SUPERFOSFATO_TRIPLO -> {
+                case YOORIN : {
+                    return ((quantFosforoFaltante * 4.58 * 100) / (eficienciaDoFosforo / 100)) / 18;
+                }
+                case MULTIF_MAGNESIANO : {
+                    return ((quantFosforoFaltante * 4.58 * 100) / (eficienciaDoFosforo / 100)) / 18;
+                }
+                case SUPERFOSFATO_TRIPLO : {
                     return ((quantFosforoFaltante * 4.58 * 100) / (eficienciaDoFosforo / 100)) / 41;
                 }
-                case MAP -> {
+                case MAP : {
                     return ((quantFosforoFaltante * 4.58 * 100) / (eficienciaDoFosforo / 100)) / 48;
                 }
-                case DAP -> {
+                case DAP : {
                     return ((quantFosforoFaltante * 4.58 * 100) / (eficienciaDoFosforo / 100)) / 45;
                 }
-                case FOSFATO_ARAD -> {
+                case FOSFATO_ARAD : {
                     return ((quantFosforoFaltante * 4.58 * 100) / (eficienciaDoFosforo / 100)) / 33;
                 }
-                case FOSFATO_GAFSA -> {
+                case FOSFATO_GAFSA : {
                     return ((quantFosforoFaltante * 4.58 * 100) / (eficienciaDoFosforo / 100)) / 29;
                 }
-                case FOSFATO_DAOUI -> {
+                case FOSFATO_DAOUI : {
                     return ((quantFosforoFaltante * 4.58 * 100) / (eficienciaDoFosforo / 100)) / 32;
                 }
-                case FOSFATO_PATOS_MINAS -> {
+                case FOSFATO_PATOS_MINAS : {
                     return ((quantFosforoFaltante * 4.58 * 100) / (eficienciaDoFosforo / 100)) / 24;
                 }
-                case ESCORIA_DE_THOMAS -> {
+                case ESCORIA_DE_THOMAS : {
                     return ((quantFosforoFaltante * 4.58 * 100) / (eficienciaDoFosforo / 100)) / 18.5;
                 }
-                case ACIDO_FOSFORICO -> {
+                case ACIDO_FOSFORICO : {
                     return ((quantFosforoFaltante * 4.58 * 100) / (eficienciaDoFosforo / 100)) / 52;
                 }
             }

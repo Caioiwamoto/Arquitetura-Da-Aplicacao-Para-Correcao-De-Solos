@@ -38,10 +38,10 @@ public class CorrecaoERecuperacaoDoPotassio {
     double calculoDaQuantidadeDaFonteAplicar(int fonteDePotassioUsar, double quantDePotassioNoSolo, double participacaoPercentualDesejadaDoPotassioNaCTC ){
         if (calculoDaNescessidadeDePotassioAdiconar(quantDePotassioNoSolo,participacaoPercentualDesejadaDoPotassioNaCTC) > 0.001){
             switch (fonteDePotassioUsar){
-                case 1 -> {return (calculoDaNescessidadeDePotassioAdiconar(quantDePotassioNoSolo,participacaoPercentualDesejadaDoPotassioNaCTC)* 39.1 * 10 * 2 * 1.2 * 100/85 * 100/58.0);}
-                case 2 -> {return (calculoDaNescessidadeDePotassioAdiconar(quantDePotassioNoSolo,participacaoPercentualDesejadaDoPotassioNaCTC)* 39.1* 10 * 2 * 1.2 * 100/85 * 100/52.0);}
-                case 3 -> {return (calculoDaNescessidadeDePotassioAdiconar(quantDePotassioNoSolo,participacaoPercentualDesejadaDoPotassioNaCTC)* 39.1 * 10 * 2 * 1.2 * 100/85 * 100/22.0);}
-                case 4 -> {return (calculoDaNescessidadeDePotassioAdiconar(quantDePotassioNoSolo,participacaoPercentualDesejadaDoPotassioNaCTC)* 39.1 * 10 * 2 * 1.2 * 100/85 * 100/44.0);}
+                case 1 : {return (calculoDaNescessidadeDePotassioAdiconar(quantDePotassioNoSolo,participacaoPercentualDesejadaDoPotassioNaCTC)* 39.1 * 10 * 2 * 1.2 * 100/85 * 100/58.0);}
+                case 2 : {return (calculoDaNescessidadeDePotassioAdiconar(quantDePotassioNoSolo,participacaoPercentualDesejadaDoPotassioNaCTC)* 39.1* 10 * 2 * 1.2 * 100/85 * 100/52.0);}
+                case 3 : {return (calculoDaNescessidadeDePotassioAdiconar(quantDePotassioNoSolo,participacaoPercentualDesejadaDoPotassioNaCTC)* 39.1 * 10 * 2 * 1.2 * 100/85 * 100/22.0);}
+                case 4 : {return (calculoDaNescessidadeDePotassioAdiconar(quantDePotassioNoSolo,participacaoPercentualDesejadaDoPotassioNaCTC)* 39.1 * 10 * 2 * 1.2 * 100/85 * 100/44.0);}
             }      
         }
         return 0.0;
@@ -58,9 +58,9 @@ public class CorrecaoERecuperacaoDoPotassio {
         }
         if(fonteDePotassioUsar == 4){
             switch (texturaSolo) {
-                case 1 ->{return 0.7*calculoDaQuantidadeDaFonteAplicar/1000;}
-                case 2 ->{return 0.5*calculoDaQuantidadeDaFonteAplicar/1000;}
-                default ->{return 0.0;}
+                case 1 :{return 0.7*calculoDaQuantidadeDaFonteAplicar/1000;}
+                case 2 :{return 0.5*calculoDaQuantidadeDaFonteAplicar/1000;}
+                default :{return 0.0;}
             }
         }
         return 0.0;
