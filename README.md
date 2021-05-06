@@ -56,5 +56,18 @@ Projeto demandado pelo IDR-Paraná, que visa desenvolver a Arquitetura da aplica
         <img src="Imagens/depoisPotassio.png" width="750" title="hover text"  align="center"/>
       </section>
 
-       
+     # Relatório - Atividade #4
+A atividade teve como objetivo criar três testes que simulam os quadros de teores do solo, correção/recuperação de fósforo, e correção/recuperação de potássio.
+Abaixo serão destacados os problemas e as devidas soluções encontradas para cada caso, seguidos de seus commits.
+
+<ul>
+       <li><p> <b>Dificuldades/problemas encontrados: </b></li>
+              1- Ao clonar o repositório e rodar a implementação, a mesma não compilou, foi necessário adicionar alguns plugins no arquivo <i>pom.xml</i> para fazer o código funcionar - <a href="https://github.com/Caioiwamoto/Arquitetura-Da-Aplicacao-Para-Correcao-De-Solos/commit/01972bb8d14852628618cb9b308485d05f81ce75">commit</a>. <br> 
+              2- O código apresentou um problema de expressões ilegais, que ocasionava em valores inválidos para a realização dos testes, a solução foi trocar as "->" por ":" nas funções de switch case - <a href="https://github.com/Caioiwamoto/Arquitetura-Da-Aplicacao-Para-Correcao-De-Solos/commit/6a78a01fc0f460ba0f6188828cd065d70bd63368">commit</a>. <br>
+              3- Há muitas estruturas estruturas condicionais no código (switch case), o que prejudica a manutenabilidade. <br>
+              4- Estava faltando realizar os testes dos cálculos de custo do alqueire para cada fonte de fósforo - <a href="https://github.com/Caioiwamoto/Arquitetura-Da-Aplicacao-Para-Correcao-De-Solos/commit/6a78a01fc0f460ba0f6188828cd065d70bd63368">commit</a>.<br>
+              Obs: os testes faltantes foram implementados somente no arquivo para a realização desta atividade <i>Tests.java</i>.<br>
+           </p>
+
+</ul>  
 
