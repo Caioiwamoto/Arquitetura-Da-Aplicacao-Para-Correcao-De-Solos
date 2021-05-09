@@ -58,15 +58,21 @@ Projeto demandado pelo IDR-Paraná, que visa desenvolver a Arquitetura da aplica
 
      # Relatório - Atividade #4
 A atividade teve como objetivo criar três testes que simulam os quadros de teores do solo, correção/recuperação de fósforo, e correção/recuperação de potássio.
-Abaixo serão destacados os problemas e as devidas soluções encontradas para cada caso, seguidos de seus commits.
+Abaixo serão destacados os problemas e as devidas soluções encontradas para cada caso, seguidos de seus commits. E também uma breve análise do código como um todo.
 
 <ul>
        <li><p> <b>Dificuldades/problemas encontrados: </b></li>
-              1- Ao clonar o repositório e rodar a implementação, a mesma não compilou, foi necessário adicionar alguns plugins no arquivo <i>pom.xml</i> para fazer o código funcionar - <a href="https://github.com/Caioiwamoto/Arquitetura-Da-Aplicacao-Para-Correcao-De-Solos/commit/01972bb8d14852628618cb9b308485d05f81ce75">commit</a>. <br> 
-              2- O código apresentou um problema de expressões ilegais, que ocasionava em valores inválidos para a realização dos testes, a solução foi trocar as "->" por ":" nas funções de switch case - <a href="https://github.com/Caioiwamoto/Arquitetura-Da-Aplicacao-Para-Correcao-De-Solos/commit/6a78a01fc0f460ba0f6188828cd065d70bd63368">commit</a>. <br>
-              3- Há muitas estruturas estruturas condicionais no código (switch case), o que prejudica a manutenabilidade. <br>
-              4- Estava faltando realizar os testes dos cálculos de custo do alqueire para cada fonte de fósforo - <a href="https://github.com/Caioiwamoto/Arquitetura-Da-Aplicacao-Para-Correcao-De-Solos/commit/6a78a01fc0f460ba0f6188828cd065d70bd63368">commit</a>.<br>
-              Obs: os testes faltantes foram implementados somente no arquivo para a realização desta atividade <i>Tests.java</i>.<br>
+              1- Ao clonar o repositório e rodar a implementação, a mesma não compilou, aparecia a seguinte mensagem de erro:<br>  
+<pre>
+Plugin org.apache.maven.plugins:maven-surefire-plugin:2.10 or one of its dependencies could not be resolved: Failed to read artifact descriptor for org.apache.maven.plugins:maven-surefire-plugin:jar:2.10: Failure to transfer org.apache.maven.plugins:maven-surefire-plugin:pom:2.10 from http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced. Original error: Could not transfer artifact org.apache.maven.plugins:maven-surefire-plugin:pom:2.10 from/to central (http://repo.maven.apache.org/maven2): Failed to transfer file: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.10/maven-surefire-plugin-2.10.pom. Return code is: 501 , ReasonPhrase:HTTPS Required. -> [Help 1]
+
+</pre>
+              Aparentemente, havia algum problema na criação do maven do projeto, a solução utilizada para esse caso, foi adicionar alguns plugins no arquivo <i>pom.xml</i> para fazer o código funcionar - <a href="https://github.com/Caioiwamoto/Arquitetura-Da-Aplicacao-Para-Correcao-De-Solos/commit/01972bb8d14852628618cb9b308485d05f81ce75">commit</a>. <br> <br>
+              2- O código apresentou alguns testes com falhas, na verdade havia um problema de expressões ilegais nos métodos de switch case, o que ocasionava em valores inválidos para a realização dos testes, a solução foi trocar as "->" por ":" nessas funções - <a href="https://github.com/Caioiwamoto/Arquitetura-Da-Aplicacao-Para-Correcao-De-Solos/commit/6a78a01fc0f460ba0f6188828cd065d70bd63368">commit</a>. <br><br>
+              3- Estava faltando realizar os testes dos cálculos de custo do alqueire para cada fonte de fósforo. Os testes faltantes foram implementados separadamente e podem ser vistos no arquivo realizado para esta atividade <i>Tests.java</i>- <a href="https://github.com/Caioiwamoto/Arquitetura-Da-Aplicacao-Para-Correcao-De-Solos/commit/6a78a01fc0f460ba0f6188828cd065d70bd63368">commit</a>.<br>
+        <li><p> <b>Análise do código: </b></li>
+              1- Analisando o código é perceptível que existem muitas estruturas condicionais no formato de switch case e if/else, como visto em aula, essa quantidade de métodos pode deixar o código mais organizado, mas prejudica a manutenabilidade. <br><br>
+              2- O código analisado não possui nenhuma herança, um dos pilares da orientação a objetos. Seria interessante a utilização, pois assim melhoraria a complexidade e o entendimento do mesmo.
            </p>
 
 </ul>  
